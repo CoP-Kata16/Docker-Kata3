@@ -1,0 +1,66 @@
+Desde la carpeta Practica0
+---------------------------
+Ejecutar los siguientes comandos:
+
+	docker run docker/whalesay cowsay boo
+
+	docker images
+
+	docker run docker/whalesay cowsay boo-boo
+
+Lista contenedores:
+
+	docker ps
+
+	docker ps -a
+
+Construye una nueva imagen:
+
+	docker build -t docker-whale .
+
+Ejecutar nueva imagen:
+
+	docker run docker-whale
+
+Creación de una cuenta en https://hub.docker.com
+
+	docker images (copiar el IMAGE ID de la imagen docker-whale)
+
+Creación de un TAG:
+
+	docker tag IMAGE_ID yourhubusername/docker-whale-p0:latest
+
+Login:
+
+	docker login --username=yourhubusername --email=youremail@company.com
+
+	(os pedirá la password)
+
+
+Push:
+	docker push yourhubusername/docker-whale-p0
+
+Comprueba que en https://hub.docker.com está la nueva imagen que hemos subido.
+
+Ahora vamos a borrar la imagen creada:
+
+	docker images
+
+	(Borramos imagenes)
+
+	docker rmi -i IMAGE_ID_NUEVA
+	docker rmi -i docker-whale
+
+Ejecutar imagen:
+
+	Ejecutamos el siguiente comando (realiza el pull automaticamente):
+
+	docker run yourhubusername/docker-whale-p0
+
+Pull: se puede hacer previamente:
+
+	docker pull yourhubusername/docker-whale-p0
+
+
+
+
