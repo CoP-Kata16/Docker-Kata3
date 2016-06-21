@@ -1,0 +1,22 @@
+Construir imagen Tomcat 8:
+
+	docker build -t ejalarcon/docker-tomcat8-spring  .
+
+Arrancar contenedor Tomcat 8:
+
+	docker run -itd --name=softtek-tomcat8-server-arq -p 8080:8080 ejalarcon/docker-tomcat8-spring
+
+
+Acceder a Tomcat (tomcat/qwerty):
+
+	http://localhost:8080/
+
+Aplicación desplegada:
+
+	http://localhost:8080/qpri_mult_web_gestionempleadosweb_01/
+
+MAC:
+
+	http://192.168.99.100:8080/
+	
+	http://192.168.99.100:8080/qpri_mult_web_gestionempleadosweb_01/

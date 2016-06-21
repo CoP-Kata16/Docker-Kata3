@@ -1,0 +1,10 @@
+Construir imagen Tomcat 8:
+
+	docker build -t ejalarcon/docker-tomcat8-spring  .
+
+Arrancar contenedor Tomcat 8:
+
+	docker run -itd --name=softtek-tomcat8-server-arq -p 8080:8080 ejalarcon/docker-tomcat8-spring
+
+
+
