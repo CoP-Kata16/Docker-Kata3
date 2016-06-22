@@ -1,4 +1,5 @@
-FROM websphere-liberty:kernel
+FROM websphere-liberty:webProfile7
+#FROM websphere-liberty:kernel
 MAINTAINER Emilio J Alarcon <ejalarcon@gmail.com>
 ENV LICENSE accept
 COPY server.xml /config/
