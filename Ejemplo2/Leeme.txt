@@ -1,10 +1,36 @@
-Construir imagen Tomcat 8:
+Basado en la imagen de WAS 8 siguiente:
 
-	docker build -t ejalarcon/docker-tomcat8-spring  .
+	https://hub.docker.com/_/websphere-liberty/
 
-Arrancar contenedor Tomcat 8:
+Bajar zip siguiente:
 
-	docker run -itd --name=softtek-tomcat8-server-arq -p 8080:8080 ejalarcon/docker-tomcat8-spring
+	https://github.com/WASdev/sample.servlet/releases/download/V1/DefaultServletEngine.zip
 
 
+Construir imagen Was 8:
 
+	docker build -t ejalarcon/docker-was8-spring-pr2  .
+
+Arrancar contenedor WAS 8:
+
+El path virtual local especificado con -v debe cambiarse a un path que exista en la maquina host:
+
+docker run -itd --name=softtek-was8-server-arq -p 9080:9080 -p 9443:9443 \
+  -v /Users/ejalarcon/CoP/DefaultServletEngine:/config \
+  ejalarcon/docker-was8-spring-pr2
+
+
+docker logs --tail=all -f softtek-was8-server-arq
+
+
+Acceder a la siguiente URL:
+
+http://localhost:9080/Sample1/SimpleServlet
+
+http://localhost:9080/qpri_mult_web_gestionempleadosweb_01/
+
+
+MAC
+
+http://192.168.99.100:9080/Sample1/SimpleServlet
+http://192.168.99.100:9080/qpri_mult_web_gestionempleadosweb_01/
